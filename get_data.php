@@ -1,6 +1,4 @@
 <?php
-// File: get_modul.php
-
 // Koneksi ke database
 $servername = "localhost";
 $username = "root";
