@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>menu cafe</title>
+    <title>Menu Cafe</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="menu cafe"></div>
+    <div id="menu-cafe"></div>
 
     <script>
     $(document).ready(function() {
@@ -16,7 +16,7 @@
             success: function(data) {
                 // Proses dan tampilkan data dalam bentuk tabel
                 var html = '<table border="1">';
-                html += '<tr><th>Nama Perusahaan</th><th>Alamat Perusahaan</th><th>Posisi Lowongan</th><th>Benefit</th><th>Durasi Pendaftaran</th><th>Aksi</th></tr>';
+                html += '<tr><th>ID</th><th>Nama Menu</th><th>Harga</th><th>Aksi</th></tr>';
                 for (var i = 0; i < data.length; i++) {
                     html += '<tr>';
                     html += '<td>' + data[i].id + '</td>';
@@ -26,7 +26,10 @@
                     html += '</tr>';
                 }
                 html += '</table>';
-                $('#lowongan-table').html(html);
+                $('#menu-cafe').html(html);
+            },
+            error: function(xhr, status, error) {
+                console.error("Terjadi kesalahan: " + error);
             }
         });
     });
